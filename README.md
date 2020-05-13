@@ -33,12 +33,11 @@ $(document).ready(function () {
             tableid = $('#tableid').DataTable({               
                 "ajax": "/api/getdata?fromdate=" + fromdate + "&todate=" + todate,
                 columns: [
-                    { data: "fromemail" },
-                    { data: "toemail" },
-                    { data: "subject" },
-                    { data: "status" },                   
-                    {
-                        data: "id",
+                    { data: "from" },
+                    { data: "to" },
+                    { data: "somedata" },
+                                        {
+                        data: "guidid",
                         "render": function (data, type, row, meta) {
                             return '<a target=_blank href="XXX/getdetails/' + data + '">Get Details</a>';
                         }
@@ -76,6 +75,7 @@ $(document).ready(function () {
 
     </script>
     
+    <body>
     
     
     <div><br /></div>
@@ -109,5 +109,16 @@ $(document).ready(function () {
                     Search
                 </button>
             </div>
+            
+            <table id="tableid" class="display" />
+            <thread>
+            <tr>
+            <th> from </th>
+             <th> to </th>
+              <th> somedata </th>
+            </tr>
+            </thread>
+            </table>
 
+</body>
     
